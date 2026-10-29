@@ -1,0 +1,8 @@
+# Local ReShade state
+*.ini
+*.log
+*.bak
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db

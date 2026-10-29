@@ -1,0 +1,11 @@
+* text=auto eol=lf
+
+*.fx text eol=lf
+*.fxh text eol=lf
+*.md text eol=lf
+*.sha256 text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
