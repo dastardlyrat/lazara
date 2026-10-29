@@ -8,6 +8,15 @@ The effect does not assign a preferred hue. Red, green, blue, amber, cyan,
 violet, skin and earth tones are treated from the same source-derived evidence
 model.
 
+**Status:** source and recorded static/model checks are available. Live ReShade
+compilation and visual acceptance remain pending; the gallery is a supplied
+comparison set, not a complete validation record.
+
+**Explore:** [Gallery](#gallery) · [Method](#what-it-does) ·
+[Recovery and degradation](#recovery-and-degradation) ·
+[Installation](#installation) · [Controls](#main-controls) ·
+[Development](#work-on-lazara) · [Validation](#validation-status).
+
 ## Gallery
 
 ### Lead comparison
@@ -137,6 +146,27 @@ Still required for promotion:
 
 The detailed evidence and stop conditions are recorded in
 [`docs/VALIDATION.md`](docs/VALIDATION.md).
+
+## Work on Lazara
+
+Start in [OCCULT_lazara.fx](reshade-shaders/Shaders/rm/effects/OCCULT_lazara.fx):
+the controls and effect implementation live together. Trace a proposed change
+through the recovery/degradation decision, local color evidence, neutral and
+highlight protection, diagnostic view, and final composite.
+
+| Area | Starting point |
+|---|---|
+| Effect controls and processing | [OCCULT_lazara.fx](reshade-shaders/Shaders/rm/effects/OCCULT_lazara.fx) |
+| Shared effect dependencies | [Header directory](reshade-shaders/Shaders/rm/header/) |
+| Diagnostic visibility | [MIXSR_API_DebugVisibility.fxh](reshade-shaders/Shaders/rm/header/MIXSR_API_DebugVisibility.fxh) |
+| Recorded checks and live stop conditions | [docs/VALIDATION.md](docs/VALIDATION.md) |
+| Supplied comparison provenance | [Image notes](docs/images/README.md) |
+| File identity | [MANIFEST.sha256](MANIFEST.sha256) |
+
+Keep recovery and deliberate degradation independently inspectable. When
+reporting a change, state the mode and diagnostic view, the expected result,
+and the observed result. Preserve the existing validation boundary until the
+effect has compiled and been compared in an actual ReShade session.
 
 ## License status
 
